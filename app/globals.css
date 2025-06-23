@@ -49,6 +49,10 @@
   .input-phone {
     @apply mt-2 h-11 rounded-md px-3 text-sm border bg-[#1A1D21] placeholder:text-[#76828D] border-[#363A3D];
   }
+
+  .shad-primary-btn {
+    @apply bg-green-500 text-white;
+  }
 }
 
 .PhoneInputInput {
