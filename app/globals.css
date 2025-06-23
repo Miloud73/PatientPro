@@ -1,2 +1,48 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "tailwindcss/preflight"
+
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  .remove-scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 0px;
+  }
+
+  .remove-scrollbar::-webkit-scrollbar-thumb:hover {
+    /* background: #1e2238; */
+    background: transparent;
+  }
+}
+
+@layer utilities {
+   .container {
+    @apply relative flex-1 overflow-y-auto px-[5%];
+  }
+   .sub-container {
+    @apply mx-auto flex size-full flex-col py-10;
+  }
+    .side-img {
+    @apply hidden h-full object-cover md:block;
+  }
+
+
+
+}
 
