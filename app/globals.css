@@ -1,9 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "tailwindcss/preflight"
-
-
-@layer base {
+@import "tailwindcss/preflight" @layer base {
   * {
     @apply border-border outline-ring/50;
   }
@@ -32,17 +29,42 @@
 }
 
 @layer utilities {
-   .container {
+  .container {
     @apply relative flex-1 overflow-y-auto px-[5%];
   }
-   .sub-container {
+  .sub-container {
     @apply mx-auto flex size-full flex-col py-10;
   }
-    .side-img {
+  .side-img {
     @apply hidden h-full object-cover md:block;
   }
 
+  .shad-error {
+    @apply text-red-400;
+  }
+  .shad-input {
+    @apply bg-[#1A1D21] placeholder:text-[#76828D] border-[#363A3D] h-11 focus-visible:ring-0 focus-visible:ring-offset-0;
+  }
 
-
+  .input-phone {
+    @apply mt-2 h-11 rounded-md px-3 text-sm border bg-[#1A1D21] placeholder:text-[#76828D] border-[#363A3D];
+  }
 }
 
+.PhoneInputInput {
+  outline: none;
+  margin-left: 4px;
+  background: #1a1d21;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.PhoneInputInput::placeholder {
+  color: #1a1d21;
+}
+
+select.PhoneInputCountrySelect {
+  background: #1a1d21;
+  color: #76828d;
+  border-radius: 5px;
+}
