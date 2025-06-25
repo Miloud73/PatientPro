@@ -35,6 +35,10 @@
   .sub-container {
     @apply mx-auto flex size-full flex-col py-10;
   }
+
+  .sub-header {
+    @apply text-[18px] font-bold md:text-[24px] font-bold;
+  }
   .side-img {
     @apply hidden h-full object-cover md:block;
   }
@@ -52,6 +56,10 @@
 
   .shad-primary-btn {
     @apply bg-green-500 text-white;
+  }
+
+  .radio-group {
+    @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-[#363A3D] bg-[#1A1D21] p-3;
   }
 }
 
@@ -72,3 +80,4 @@ select.PhoneInputCountrySelect {
   color: #76828d;
   border-radius: 5px;
 }
+
