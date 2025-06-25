@@ -8,8 +8,8 @@ export const {
     PATIENT_COLLECTION_ID,
     DOCTOR_COLLECTION_ID,
     APPOINTMENT_COLLECTION_ID,
-    BUCKET_ID,
-    ENDPOINT,
+    NEXT_PUBLIC_BUCKET_ID,
+    NEXT_PUBLIC_ENDPOINT,
 } = process.env;
 
 // console.log('Config loaded:', {
