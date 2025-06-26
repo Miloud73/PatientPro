@@ -21,14 +21,14 @@ const Register = async ({params:{userId}}: SearchParamProps) => {
 
           <RegisterForms user={user} />
 
-          <div className="text-sm not-italic mt-6.5 flex justify-between">
+          {/* <div className="text-sm not-italic mt-6.5 flex justify-between">
             <p className="justify-items-end text-[#76828D] xl:text-left">
               © 2025 PatientPro - copyright (adrianhajdin)
             </p>
             <Link href="/?admmin=true" className="text-[#24AE7C] ">
               Admin
             </Link>
-          </div>
+          </div> */}
         </div>
       </section>
 

@@ -128,7 +128,7 @@ const RegisterForms = ({ user }: { user: User }) => {
           />
         </div>
 
-        <SubmitButton isLoading={isLoading}>Get Started</SubmitButton>
+        <SubmitButton isLoading={isLoading}>Submit and continue</SubmitButton>
       </form>
     </Form>
   );
