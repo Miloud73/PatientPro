@@ -23,6 +23,7 @@ import { Checkbox } from "./ui/checkbox";
 
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
+import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select";
 
 interface CustomProps {
   control: Control<any>;
@@ -150,6 +151,21 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
               {props.label}
             </label>
           </div>
+        </FormControl>
+      );
+    case FormFieldType.SELECT:
+       return (
+        <FormControl>
+          <Select onValueChange={field.onChange} defaultValue={field.value}>
+            <FormControl>
+              <SelectTrigger className="shad-select-trigger">
+                <SelectValue placeholder={props.placeholder} />
+              </SelectTrigger>
+            </FormControl>
+            <SelectContent className="shad-select-content">
+              {props.children}
+            </SelectContent>
+          </Select>
         </FormControl>
       );
     default:
