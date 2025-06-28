@@ -61,6 +61,16 @@
   .radio-group {
     @apply flex h-full flex-1 items-center gap-2 rounded-md border border-dashed border-[#363A3D] bg-[#1A1D21] p-3;
   }
+    .shad-select-trigger {
+    @apply bg-[#1A1D21]  placeholder:text-[#76828D] border-[#363A3D] h-11 focus:ring-0 focus:ring-offset-0;
+  }
+
+  .shad-select-content {
+    @apply bg-[#1A1D21] border-[#363A3D];
+  }
+
+
+
 }
 
 .PhoneInputInput {
@@ -80,3 +90,65 @@ select.PhoneInputCountrySelect {
   color: #76828d;
   border-radius: 5px;
 }
+
+#«Ribrnel7»-form-item{
+  width:100%;
+}
+
+/* .react-datepicker-wrapper.date-picker {
+  display: flex;
+  align-items: center;
+}
+
+.react-datepicker,
+.react-datepicker__time,
+.react-datepicker__header,
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker__day,
+.react-datepicker-time__header {
+  background-color: #1a1d21 ;
+  border-color: #363a3d ;
+  color: #abb8c4 ;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name,
+.react-datepicker-time__header {
+  color: #ffffff ;
+}
+
+.react-datepicker__triangle {
+  fill: #1a1d21 ;
+  color: #1a1d21 ;
+  stroke: #1a1d21 ;
+}
+
+.react-datepicker__time-list-item:hover {
+  background-color: #363a3d ;
+}
+
+.react-datepicker__input-container input {
+  background-color: #1a1d21 ;
+  width: 100%;
+  outline: none;
+}
+
+.react-datepicker__day--selected {
+  background-color: #24ae7c ;
+  color: #ffffff ;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item--selected {
+  background-color: #24ae7c ;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid #363a3d ;
+}
+
+.react-datepicker__time-list-item {
+  display: flex ;
+  align-items: center ;
+} */
