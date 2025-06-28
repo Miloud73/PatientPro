@@ -186,7 +186,7 @@ const RegisterForms = ({ user }: { user: User }) => {
               placeholder=" Software Engineer"
             />
           </div>
-             <div className="flex flex-col gap-6 xl:flex-row">
+          <div className="flex flex-col gap-6 xl:flex-row">
             <CustomFormsFields
               fieldType={FormFieldType.INPUT}
               control={form.control}
@@ -231,9 +231,7 @@ const RegisterForms = ({ user }: { user: User }) => {
               </SelectItem>
             ))}
           </CustomFormsFields>
-         
-
-          
+        
           <div className="flex flex-col gap-6 xl:flex-row">
             <CustomFormsFields
               fieldType={FormFieldType.INPUT}
@@ -352,7 +350,7 @@ const RegisterForms = ({ user }: { user: User }) => {
 
       
 
-        <SubmitButton isLoading={isLoading}>Submit and continue</SubmitButton>
+        <SubmitButton className="cursor-pointer" isLoading={isLoading}>Submit and continue</SubmitButton>
       </form>
     </Form>
   );

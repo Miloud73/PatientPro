@@ -83,6 +83,9 @@
    .checkbox-label {
     @apply cursor-pointer text-sm font-medium text-[#ABB8C4] peer-disabled:cursor-not-allowed peer-disabled:opacity-70 md:leading-none;
   }
+  .side-img {
+    @apply hidden h-full object-cover md:block;
+  }
 
 
 
