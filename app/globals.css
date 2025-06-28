@@ -72,6 +72,19 @@
     @apply bg-[#1A1D21] placeholder:text-[#76828D] border-[#363A3D] focus-visible:ring-0 focus-visible:ring-offset-0 ;
   }
 
+    .file-upload {
+    @apply text-xs font-normal flex cursor-pointer  flex-col items-center justify-center gap-3 rounded-md border border-dashed border-[#363A3D] bg-[#1A1D21] p-5;
+  }
+
+    .file-upload_label {
+    @apply flex flex-col justify-center gap-2 text-center text-[#76828D];
+  }
+
+   .checkbox-label {
+    @apply cursor-pointer text-sm font-medium text-[#ABB8C4] peer-disabled:cursor-not-allowed peer-disabled:opacity-70 md:leading-none;
+  }
+
+
 
 
 
