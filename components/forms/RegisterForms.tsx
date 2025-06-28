@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 import { createUser } from "@/lib/actions/patient.actions";
 import { FormFieldType } from "./PatientForms";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
-import { Doctors, GenderOptions } from "@/constants";
+import { Doctors, GenderOptions, IdentificationTypes } from "@/constants";
 import { Label } from "../ui/label";
 import { SelectItem } from "../ui/select";
 import Image from "next/image";
@@ -203,7 +203,6 @@ const RegisterForms = ({ user }: { user: User }) => {
               label="Insurance Provider"
               placeholder="BlueCross BlueShield"
             />
-
             <CustomFormsFields
               fieldType={FormFieldType.INPUT}
               control={form.control}
@@ -211,8 +210,67 @@ const RegisterForms = ({ user }: { user: User }) => {
               label="Insurance policy number"
               placeholder=" ABC123456789"
             />
-          
           </div>
+          <div className="flex flex-col gap-6 xl:flex-row">
+            <CustomFormsFields
+              fieldType={FormFieldType.TEXTAREA}
+              control={form.control}
+              name="allergies"
+              label="Allergies (if any)"
+              placeholder="Peanuts, Penicillin, Pollen"
+            />
+            <CustomFormsFields
+              fieldType={FormFieldType.TEXTAREA}
+              control={form.control}
+              name="currentMedication"
+              label="Current medications"
+              placeholder=" Ibuprofen 200mg, Levothyroxine 50mcg"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6 xl:flex-row">
+            <CustomFormsFields
+              fieldType={FormFieldType.TEXTAREA}
+              control={form.control}
+              name="familyMedicalHistory"
+              label=" Family medical history (if relevant)"
+              placeholder="Mother had brain cancer, Father has hypertension"
+            />
+
+            <CustomFormsFields
+              fieldType={FormFieldType.TEXTAREA}
+              control={form.control}
+              name="pastMedicalHistory"
+              label="Past medical history"
+              placeholder="Appendectomy in 2015, Asthma diagnosis in childhood"
+            />
+          </div>
+           <section className="space-y-6">
+          <div className="mb-9 space-y-1">
+            <h2 className="sub-header">Identification and Verfication</h2>
+          </div>
+          </section>
+          <CustomFormsFields
+            fieldType={FormFieldType.SELECT}
+            control={form.control}
+            name="identificationType"
+            label="Identification Type"
+            placeholder="Select identification type"
+          >
+            {IdentificationTypes.map((type, i) => (
+              <SelectItem key={type + i} value={type}>
+                {type}
+              </SelectItem>
+            ))}
+          </CustomFormsFields>
+
+          <CustomFormsFields
+            fieldType={FormFieldType.INPUT}
+            control={form.control}
+            name="identificationNumber"
+            label="Identification Number"
+            placeholder="123456789"
+          />
 
       
 

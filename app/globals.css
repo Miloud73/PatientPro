@@ -68,6 +68,11 @@
   .shad-select-content {
     @apply bg-[#1A1D21] border-[#363A3D];
   }
+  .shad-textArea {
+    @apply bg-[#1A1D21] placeholder:text-[#76828D] border-[#363A3D] focus-visible:ring-0 focus-visible:ring-offset-0 ;
+  }
+
+
 
 
 
@@ -94,7 +99,9 @@ select.PhoneInputCountrySelect {
 #«Ribrnel7»-form-item{
   width:100%;
 }
-
+#«R16brnel7»-form-item{
+  width:100%
+}
 /* .react-datepicker-wrapper.date-picker {
   display: flex;
   align-items: center;
