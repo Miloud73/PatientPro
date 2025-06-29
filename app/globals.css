@@ -94,12 +94,15 @@
   .shad-danger-btn {
     @apply bg-red-700 text-white;
   }
-    .success-img {
-    @apply m-auto flex flex-1 flex-col items-center justify-between gap-10 py-10;
+  .success-img {
+    @apply m-auto flex flex-1 flex-col items-center justify-between gap-10 py-5;
   }
 
   .copyright {
-    @apply text-[14px] font-normal justify-items-end text-center text-[#76828D] xl:text-left;
+    @apply text-[12px] font-normal justify-items-end text-center text-[#76828D] xl:text-left;
+  }
+  .request-details {
+    @apply flex w-full flex-col items-center gap-8 border-y-2 border-[#1A1D21] py-8 md:w-fit md:flex-row;
   }
 }
 
