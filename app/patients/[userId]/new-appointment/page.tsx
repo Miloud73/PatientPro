@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-// import { AppointmentForm } from "@/components/forms/AppointmentForm";
 import { getPatient } from "@/lib/actions/patient.actions";
+import AppointmentForm from "@/components/forms/AppointmentForm";
 
 const Appointment = async ({ params: { userId } }: SearchParamProps) => {
   const patient = await getPatient(userId);
@@ -18,11 +18,10 @@ const Appointment = async ({ params: { userId } }: SearchParamProps) => {
             className="mb-5 h-10 w-fit"
           />
 
-          {/* <AppointmentForm
-            patientId={patient?.$id}
-            userId={userId}
-            type="create"
-          /> */}
+          <AppointmentForm userId={userId} patientId={patient?.$id} type="create"/>
+           {/* 
+            
+             */}
         </div>
       </section>
 
