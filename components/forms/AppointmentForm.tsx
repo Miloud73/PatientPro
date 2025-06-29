@@ -3,18 +3,12 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-
-import { Button } from "@/components/ui/button";
 import { Form } from "@/components/ui/form";
 import CustomFormsFields from "../CustomFormsFields";
 import SubmitButton from "../SubmitButton";
 import { useState } from "react";
-import {
-  getAppointmentSchema,
-  CreateAppointmentSchema,
-} from "@/lib/validation";
+import { getAppointmentSchema } from "@/lib/validation";
 import { useRouter } from "next/navigation";
-import { createUser } from "@/lib/actions/patient.actions";
 import { FormFieldType } from "./PatientForms";
 import { Doctors } from "@/constants";
 import { SelectItem } from "../ui/select";
@@ -30,12 +24,12 @@ const AppointmentForm = ({
   patientId: string;
   type: "create" | "cancel" | "schedule";
 }) => {
-  const AppointementFormValidation = getAppointmentSchema(type);
+  const appointmentFormValidation = getAppointmentSchema(type);
   const router = useRouter();
   const [isLoading, setisLoading] = useState(false);
   // 1. Define your form.
-  const form = useForm<z.infer<typeof AppointementFormValidation>>({
-    resolver: zodResolver(AppointementFormValidation),
+  const form = useForm<z.infer<typeof appointmentFormValidation>>({
+    resolver: zodResolver(appointmentFormValidation),
     defaultValues: {
       primaryPhysician: "",
       reason: "",
@@ -45,7 +39,7 @@ const AppointmentForm = ({
   });
 
   // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof AppointementFormValidation>) {
+  async function onSubmit(values: z.infer<typeof appointmentFormValidation>) {
     setisLoading(true);
 
     let status;
@@ -64,7 +58,7 @@ const AppointmentForm = ({
 
     try {
       if (type === "create" && patientId) {
-        const appointementData = {
+        const appointmentData = {
           userId,
           patient: patientId,
           primaryPhysician: values.primaryPhysician,
@@ -73,12 +67,12 @@ const AppointmentForm = ({
           note: values.note,
           status: status as Status,
         };
-        const appointement = await createAppointment(appointementData);
+        const appointment = await createAppointment(appointmentData);
 
-        if (appointement) {
+        if (appointment) {
           form.reset();
           router.push(
-            `patients/${userId}/new-appointment/success?appointement_ID =${appointement.id}`
+            `/patients/${userId}/new-appointment/success?appointmentId=${appointment.$id}`
           );
         }
       }
@@ -90,13 +84,13 @@ const AppointmentForm = ({
   let buttonLabel;
   switch (type) {
     case "cancel":
-      buttonLabel = "Cancel Appointement";
+      buttonLabel = "Cancel appointment";
       break;
     case "create":
-      buttonLabel = "Create Appointement";
+      buttonLabel = "Create appointment";
       break;
     case "schedule":
-      buttonLabel = "Schedule Appointement";
+      buttonLabel = "Schedule appointment";
       break;
   }
   return (
@@ -143,8 +137,8 @@ const AppointmentForm = ({
                 fieldType={FormFieldType.TEXTAREA}
                 control={form.control}
                 name="reason"
-                label="Reason for appointement "
-                placeholder="Enter reason for appointement"
+                label="Reason for appointment "
+                placeholder="Enter reason for appointment"
               />
               <CustomFormsFields
                 fieldType={FormFieldType.TEXTAREA}
@@ -158,7 +152,7 @@ const AppointmentForm = ({
               fieldType={FormFieldType.DATE_PICKER}
               control={form.control}
               name="schedule"
-              label="Expected appointement date"
+              label="Expected appointment date"
               showTimeSelect
               dateFormat="MM/dd/yyyy - h:mm aa"
             />
