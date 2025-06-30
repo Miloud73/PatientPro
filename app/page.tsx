@@ -1,12 +1,15 @@
 import PatientForms from "@/components/forms/PatientForms";
+import PassKeyModal from "@/components/PassKeyModal";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function Home({ searchParams }: SearchParamProps) {
+  const isAdmin = searchParams.admin === "true";
   return (
     <div className="flex h-screen max-h-screen">
-      {/* OTP Verification */}
+      {isAdmin && <PassKeyModal />}
+
       <section className="remove-scrollbar container ">
         <div className="sub-container max-w-[496px]">
           <Image
@@ -23,14 +26,14 @@ export default function Home() {
             <p className="justify-items-end text-[#76828D] xl:text-left">
               © 2025 PatientPro - copyright (adrianhajdin)
             </p>
-            <Link href="/?admmin=true" className="text-[#24AE7C] ">
+            <Link href="/?admin=true" className="text-[#24AE7C] ">
               Admin
             </Link>
           </div>
         </div>
       </section>
 
-      <Image 
+      <Image
         src="/assets/images/onboarding-img.png"
         width={900}
         height={1000}

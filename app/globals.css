@@ -104,6 +104,18 @@
   .request-details {
     @apply flex w-full flex-col items-center gap-8 border-y-2 border-[#1A1D21] py-8 md:w-fit md:flex-row;
   }
+
+  .shad-alert-dialog {
+    @apply space-y-5 bg-[#1A1D21] border-[#363A3D] outline-none ;
+  }
+
+   .shad-otp {
+    @apply w-full flex justify-between ;
+  }
+
+  .shad-otp-slot {
+    @apply text-[36px] font-bold justify-center flex border border-[#363A3D] rounded-lg size-16 gap-4 ;
+  }
 }
 
 .PhoneInputInput {
