@@ -40,8 +40,8 @@ const AppointmentForm = ({
       primaryPhysician: appointment ? appointment.primaryPhysician : '',
       reason: appointment ? appointment.reason : '',
       note: appointment ? appointment.note : '',
-      schedule: appointment ? new Date(appointment.schedule): new Date(),
-      cancellationReason : appointment ? appointment.cancellationReason : '' , 
+      schedule: appointment ? new Date(appointment?.schedule): new Date(Date.now()),
+      cancellationReason :  appointment?.cancellationReason || '' , 
     },
   });
 
