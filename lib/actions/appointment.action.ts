@@ -143,3 +143,18 @@ export const updateAppointment = async ({
     console.error("An error occurred while scheduling an appointment:", error);
   }
 };
+
+export const sendSMSNotification = async (userId: string, content: string) => {
+  try {
+    // https://appwrite.io/docs/references/1.5.x/server-nodejs/messaging#createSms
+    const message = await messaging.createSms(
+      ID.unique(),
+      content,
+      [],
+      [userId]
+    );
+    return parseStringify(message);
+  } catch (error) {
+    console.error("An error occurred while sending sms:", error);
+  }
+};
